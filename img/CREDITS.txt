@@ -1,0 +1,39 @@
+IMAGE CREDITS — royal-prestige template
+
+All three gallery photos are from Wikimedia Commons under Creative Commons
+licenses that require attribution. Keep this file (or equivalent credit)
+alongside the images if you publish this site, or replace the photos with
+your own before removing it.
+
+1. gallery-1-bouquet.jpg
+   Title: "Beach Wedding Bouquet"
+   Author/Credit: Simple Maui Wedding (simplemauiwedding.net)
+   License: CC BY 2.5
+   Source: https://commons.wikimedia.org/wiki/File:Beach_Wedding_Bouquet.jpg
+
+2. gallery-2-table-flowers.jpg
+   Title: "Decorative flowers and fruits on the wedding table with blurry background"
+   Author: Shixart1985
+   License: CC BY 2.0
+   Source: https://commons.wikimedia.org/wiki/File:Decorative_flowers_and_fruits_on_the_wedding_table_with_blurry_background.jpg
+
+3. gallery-3-floral.jpg
+   Title: "Wedding-Flowers"
+   Author: Djmuenchen s4l
+   License: CC BY-SA 4.0
+   Source: https://commons.wikimedia.org/wiki/File:Wedding-Flowers.jpg
+   Note: CC BY-SA — if you edit/remix this specific image and redistribute
+   it, the edited image itself should stay under CC BY-SA 4.0. Using it
+   as-is on a wedding page is fine with attribution above.
+
+None of these are photos of your actual wedding — they're neutral,
+license-clear placeholders (bouquets/table décor, no identifiable people).
+Swap them for your own photos whenever you're ready; see README.txt.
+
+4. Ganesh ji icon (inlined as SVG in index.html, opening screen)
+   Title: "Ganesha icon" (Noun Project #744441)
+   Author: Ameya Narvankar
+   License: CC BY-SA 3.0
+   Source: https://commons.wikimedia.org/wiki/File:Noun_Project_Ganesha_icon_744441_cc.svg
+   Note: line-art only, chosen for a simple, respectful, non-photographic
+   depiction suitable for an invitation header.
