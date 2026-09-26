@@ -159,9 +159,11 @@
 
   /* ---------- Venue ---------- */
   #venue{background:var(--cream)}
-  #venue .icon{font-size:26px;color:var(--rose-dark)}
+  .venue-pin{width:30px;height:30px;color:var(--rose-dark);margin-bottom:4px}
   #venue h2{color:var(--rose-dark);margin-top:6px}
-  #venue address{font-style:normal;font-size:18px;margin:14px 0 22px;line-height:1.6}
+  .venue-name{font-size:26px;color:#3a2530;margin:0 0 6px}
+  .venue-address{font-style:normal;font-size:18px;margin:0 0 30px;line-height:1.6;color:var(--ink-soft)}
+  .venue-illustration{width:100%;max-width:380px;height:auto;color:var(--rose);opacity:.45;margin:8px auto 34px;display:block}
   .btn{
     display:inline-block;background:var(--maroon);color:#fff;text-decoration:none;
     padding:13px 30px;border-radius:30px;font-size:14px;letter-spacing:1px;
@@ -171,36 +173,12 @@
   .btn:hover{transform:translateY(-2px)}
   .btn.ghost{background:transparent;border:1px solid var(--rose-dark);color:var(--rose-dark);box-shadow:none}
 
-  /* ---------- Dress code ---------- */
-  #dresscode{background:var(--blush)}
-  .dc-grid{display:flex;gap:40px;justify-content:center;margin-top:26px;flex-wrap:wrap}
-  .dc-grid h3{color:var(--rose-dark);border-bottom:1px solid var(--rose);display:inline-block;padding-bottom:6px}
-  .dc-grid p{max-width:220px;color:var(--ink-soft)}
-
   /* ---------- Pre-wedding events ---------- */
   #prewedding{background:var(--blush-2)}
   .pw-grid{display:grid;gap:26px;margin-top:26px}
   .pw-item h3{color:var(--rose-dark);font-size:22px}
   .pw-item .when{margin:4px 0}
   .pw-item .where{color:var(--ink-soft)}
-
-  /* ---------- Accommodation / Gifts ---------- */
-  #accommodation{background:var(--cream)}
-  #gifts{background:var(--blush)}
-
-  /* ---------- RSVP ---------- */
-  #rsvp{background:var(--blush-2)}
-  form{max-width:420px;margin:26px auto 0;text-align:left}
-  label{display:block;font-size:14px;color:var(--ink);margin:16px 0 6px;font-weight:600}
-  label i{color:var(--rose-dark)}
-  input,select,textarea{
-    width:100%;padding:12px 14px;border:1px solid var(--rose);border-radius:8px;
-    font-family:'Cormorant Garamond',serif;font-size:16px;background:#fff;color:var(--ink);
-  }
-  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold)}
-  textarea{resize:vertical;min-height:90px}
-  form .btn{width:100%;margin-top:22px}
-  #rsvp-status{margin-top:14px;font-size:14px;color:var(--rose-dark)}
 
   /* ---------- Closing ---------- */
   #closing{background:var(--blush)}
@@ -220,7 +198,6 @@
 
   @media(max-width:520px){
     section{padding:64px 18px}
-    .dc-grid{gap:24px}
   }
 </style>
 </head>
@@ -334,35 +311,60 @@
   <h2 class="script" style="font-size:38px">Wedding Events</h2>
   <div class="timeline">
     <div class="tl-item">
+      <h3>Ring Ceremony</h3>
+      <div class="when">Dec 2, 2026, 7:30 PM</div>
+      <div class="note">Your gracious presence is requested &#10084;</div>
+    </div>
+    <div class="tl-item">
       <h3>Wedding Ceremony</h3>
-      <div class="when">Jun 30, 2027, 10:30 AM</div>
+      <div class="when">Dec 2, 2026, 8:00 PM</div>
       <div class="note">Your gracious presence is requested &#10084;</div>
     </div>
     <div class="tl-item">
       <h3>Reception</h3>
-      <div class="when">Jul 2, 2027, 7:30 PM</div>
-      <div class="note">Your gracious presence is requested at the reception, 7:30 PM onwards.</div>
+      <div class="when">Dec 4, 2026, 5:00 PM</div>
+      <div class="note">Your gracious presence is requested at the reception, 5:00 PM onwards.</div>
     </div>
   </div>
 </section>
 
 <!-- ================= Venue ================= -->
 <section id="venue">
-  <div class="icon">&#128205;</div>
+  <svg class="venue-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <path d="M12 21c-4.5-4.6-7-8.2-7-11.5A7 7 0 0 1 19 9.5C19 12.8 16.5 16.4 12 21z"/>
+    <circle cx="12" cy="9.3" r="2.6"/>
+  </svg>
   <h2 class="script" style="font-size:38px">Venue</h2>
-  <address>The Grand Palace Hall<br>12 Rose Garden Road, New Delhi</address>
-  <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">View on Google Maps</a>
-</section>
-
-<!-- ================= Dress code ================= -->
-<section id="dresscode">
-  <div class="icon" style="font-size:24px;color:var(--rose-dark)">&#128085;</div>
-  <h2 class="script" style="font-size:38px">Dress Code</h2>
   <div class="divider"><span></span><i>&#10084;</i><span></span></div>
-  <div class="dc-grid">
-    <div><h3>Women</h3><p>Elegant formal attire in pastel or jewel tones</p></div>
-    <div><h3>Men</h3><p>Suit or traditional formal wear</p></div>
-  </div>
+  <h3 class="venue-name">CL Garden</h3>
+  <p class="venue-address">Sadrana, Gurgaon, Haryana</p>
+  <svg class="venue-illustration" viewBox="0 0 400 190" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <line x1="10" y1="185" x2="390" y2="185" stroke-width="2"/>
+    <!-- left minaret -->
+    <rect x="33" y="118" width="14" height="67"/>
+    <path d="M28 118 L40 96 L52 118 Z"/>
+    <circle cx="40" cy="90" r="3"/>
+    <!-- right minaret -->
+    <rect x="353" y="118" width="14" height="67"/>
+    <path d="M348 118 L360 96 L372 118 Z"/>
+    <circle cx="360" cy="90" r="3"/>
+    <!-- left dome building -->
+    <rect x="80" y="128" width="60" height="57"/>
+    <path d="M80 128 C 80 100, 140 100, 140 128 Z"/>
+    <circle cx="110" cy="96" r="3"/>
+    <path d="M100 185 L100 158 A 10 10 0 0 1 120 158 L120 185"/>
+    <!-- right dome building -->
+    <rect x="260" y="128" width="60" height="57"/>
+    <path d="M260 128 C 260 100, 320 100, 320 128 Z"/>
+    <circle cx="290" cy="96" r="3"/>
+    <path d="M280 185 L280 158 A 10 10 0 0 1 300 158 L300 185"/>
+    <!-- central structure -->
+    <rect x="165" y="108" width="70" height="77"/>
+    <path d="M165 108 C 165 55, 235 55, 235 108 Z"/>
+    <circle cx="200" cy="48" r="3.5"/>
+    <path d="M186 185 L186 138 A 14 16 0 0 1 214 138 L214 185"/>
+  </svg>
+  <a class="btn" href="https://share.google/L2SK2DAxCuHDLtvRy" target="_blank" rel="noopener">View on Google Maps</a>
 </section>
 
 <!-- ================= Pre-wedding events ================= -->
@@ -372,64 +374,21 @@
   <div class="divider"><span></span><i>&#10084;</i><span></span></div>
   <div class="pw-grid">
     <div class="pw-item">
-      <h3>Mehendi</h3>
-      <div class="when">Jun 27, 2027, 9:30 PM</div>
-      <div class="where">At Bride's House</div>
-    </div>
-    <div class="pw-item">
-      <h3>Haldi</h3>
-      <div class="when">Jun 28, 2027, 8:30 PM</div>
+      <h3>Tilak</h3>
+      <div class="when">Nov 28, 2026, 8:00 PM</div>
       <div class="where">At Groom's House</div>
     </div>
     <div class="pw-item">
-      <h3>Sangeet</h3>
-      <div class="when">Jun 29, 2027, 9:00 PM</div>
-      <div class="where">At The Grand Palace Hall</div>
+      <h3>Haldi</h3>
+      <div class="when">Nov 29, 2026, 8:30 PM</div>
+      <div class="where">At Groom's House</div>
+    </div>
+    <div class="pw-item">
+      <h3>Mehendi</h3>
+      <div class="when">Nov 30, 2026, 9:30 PM</div>
+      <div class="where">At Bride's House</div>
     </div>
   </div>
-</section>
-
-<!-- ================= Accommodation ================= -->
-<section id="accommodation">
-  <div class="icon">&#127976;</div>
-  <h2 class="script" style="font-size:38px">Accommodation</h2>
-  <div class="divider"><span></span><i>&#10084;</i><span></span></div>
-  <p>Special rates at The Grand Palace Hotel (5 min from venue).<br>Use code <strong>WEDDING2027</strong> when booking.</p>
-</section>
-
-<!-- ================= Gifts ================= -->
-<section id="gifts">
-  <div class="icon">&#127873;</div>
-  <h2 class="script" style="font-size:38px">Gifts</h2>
-  <div class="divider"><span></span><i>&#10084;</i><span></span></div>
-  <p>Your presence is the greatest gift of all. Should you wish to honor us further,<br>a contribution towards our new journey together would be cherished.</p>
-</section>
-
-<!-- ================= RSVP ================= -->
-<section id="rsvp">
-  <div class="icon">&#9993;</div>
-  <h2 class="script" style="font-size:38px">RSVP</h2>
-  <div class="divider"><span></span><i>&#10084;</i><span></span></div>
-  <form id="rsvp-form">
-    <label for="rsvp-name">Your Name *</label>
-    <input id="rsvp-name" name="name" type="text" placeholder="Your full name" required>
-
-    <label for="rsvp-email">Email *</label>
-    <input id="rsvp-email" name="email" type="email" placeholder="you@example.com" required>
-
-    <label for="rsvp-attend">Will you be attending? *</label>
-    <select id="rsvp-attend" name="attending" required>
-      <option value="" disabled selected>Select...</option>
-      <option value="yes">Joyfully accepts</option>
-      <option value="no">Regretfully declines</option>
-    </select>
-
-    <label for="rsvp-message">Your Message</label>
-    <textarea id="rsvp-message" name="message" placeholder="Write your wishes..."></textarea>
-
-    <button type="submit" class="btn">Send Message</button>
-    <div id="rsvp-status"></div>
-  </form>
 </section>
 
 <!-- ================= Closing ================= -->
@@ -450,7 +409,7 @@
    EDIT THIS CONFIG TO CUSTOMISE THE INVITATION
    ========================================================= */
 const CONFIG = {
-  weddingDateISO: "2027-06-30T10:30:00", // used by the live countdown
+  weddingDateISO: "2026-12-02T20:00:00", // used by the live countdown
 };
 
 /* Background videos: pick desktop vs mobile file by screen width in JS
@@ -733,44 +692,6 @@ function launchConfetti(){
   setInterval(tick, 1000);
 })();
 
-/* RSVP form: no backend by default.
-   Opens a pre-filled email to you. To collect responses automatically,
-   set FORM_ENDPOINT to a Formspree (or similar) endpoint URL and this
-   will POST there instead. */
-const FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/yourFormId"
-const RSVP_TO_EMAIL = "your-email@example.com";
-
-document.getElementById('rsvp-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const status = document.getElementById('rsvp-status');
-  const data = Object.fromEntries(new FormData(form).entries());
-
-  if (FORM_ENDPOINT) {
-    try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form),
-      });
-      if (res.ok) {
-        status.textContent = 'Thank you! Your RSVP has been sent.';
-        form.reset();
-      } else {
-        status.textContent = 'Something went wrong. Please try again.';
-      }
-    } catch {
-      status.textContent = 'Network error. Please try again.';
-    }
-  } else {
-    const subject = encodeURIComponent(`RSVP from ${data.name}`);
-    const body = encodeURIComponent(
-      `Name: ${data.name}\nEmail: ${data.email}\nAttending: ${data.attending}\nMessage: ${data.message}`
-    );
-    window.location.href = `mailto:${RSVP_TO_EMAIL}?subject=${subject}&body=${body}`;
-    status.textContent = 'Opening your email app to send the RSVP...';
-  }
-});
 </script>
 </body>
 </html>
