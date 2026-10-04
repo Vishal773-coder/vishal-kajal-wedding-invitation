@@ -209,7 +209,7 @@
 </svg>
 
 <button id="music-toggle" title="Toggle music" aria-label="Toggle background music">&#9834;</button>
-<audio id="bg-audio" loop></audio>
+<audio id="bg-audio" src="maye-ni-maye-lata-mangeshka1-46sec.mp3" loop></audio>
 
 <!-- ================= Envelope splash ================= -->
 <div id="envelope">
@@ -274,22 +274,6 @@
     </svg>
   </div>
   <div class="scratch-hint" id="scratch-hint">Scratch the heart</div>
-</section>
-
-<!-- ================= Gallery ================= -->
-<section id="gallery">
-  <div class="eyebrow">Moments</div>
-  <h2 class="script" style="font-size:38px">Our Story in Pictures</h2>
-  <div class="divider"><span></span><i>&#10084;</i><span></span></div>
-  <div class="carousel">
-    <div class="carousel-track" id="carousel-track">
-      <div class="slide"><img src="img/gallery-1-bouquet.jpg" alt="Bridal bouquet"><span>The Bouquet</span></div>
-      <div class="slide"><img src="img/gallery-2-table-flowers.jpg" alt="Reception table decor"><span>The Reception</span></div>
-      <div class="slide"><img src="img/gallery-3-floral.jpg" alt="Floral centerpiece"><span>The Details</span></div>
-    </div>
-  </div>
-  <div class="dots" id="carousel-dots"></div>
-  <p style="font-size:12px;color:var(--ink-soft);margin-top:14px">Photo credits in img/CREDITS.txt — swap in your own photos anytime (see README).</p>
 </section>
 
 <!-- ================= Countdown ================= -->
@@ -470,11 +454,11 @@ envelopeVideo.addEventListener('playing', () => clearTimeout(startFallback));
 envelopeVideo.addEventListener('ended', openInvite);
 envelopeVideo.addEventListener('error', openInvite);
 
-/* Music toggle (wire #bg-audio's src to your own royalty-free track) */
+/* Background music toggle */
 const musicBtn = document.getElementById('music-toggle');
 const audioEl = document.getElementById('bg-audio');
 musicBtn.addEventListener('click', () => {
-  if (!audioEl.src) { alert('Add an audio file: set #bg-audio src in index.html'); return; }
+  if (!audioEl.src) return;
   if (audioEl.paused) { audioEl.play(); musicBtn.textContent = '♫'; }
   else { audioEl.pause(); musicBtn.textContent = '♪'; }
 });
@@ -639,30 +623,6 @@ function launchConfetti(){
   }
   requestAnimationFrame(frame);
 }
-
-/* Carousel */
-(function carousel(){
-  const track = document.getElementById('carousel-track');
-  const slides = track.children;
-  const dotsWrap = document.getElementById('carousel-dots');
-  let index = 0;
-
-  for (let i=0;i<slides.length;i++){
-    const d = document.createElement('button');
-    d.className = 'dot' + (i===0 ? ' active' : '');
-    d.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(d);
-  }
-  const dots = dotsWrap.children;
-
-  function goTo(i){
-    index = i;
-    track.style.transform = `translateX(-${index * 100}%)`;
-    for (let d of dots) d.classList.remove('active');
-    dots[index].classList.add('active');
-  }
-  setInterval(() => goTo((index+1) % slides.length), 4000);
-})();
 
 /* Countdown */
 (function countdown(){
