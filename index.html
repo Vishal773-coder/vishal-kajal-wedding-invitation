@@ -435,7 +435,20 @@ document.getElementById('envelope').addEventListener('touchmove', (e) => {
    blocking autoplay, e.g. iOS Low Power Mode). */
 const envelope = document.getElementById('envelope');
 const envelopeVideo = document.getElementById('envelope-video');
+const audio = document.getElementById('bg-audio');
+const musicBtn = document.getElementById('music-toggle');
 let inviteOpened = false;
+
+function startMusic(){
+  if (!audio.src || !audio.paused) return;
+  audio.play().then(() => { musicBtn.textContent = '♫'; }).catch(() => {});
+}
+
+audio.addEventListener('play', () => { musicBtn.textContent = '♫'; });
+audio.addEventListener('pause', () => { musicBtn.textContent = '♪'; });
+['pointerdown', 'keydown'].forEach(eventName => {
+  document.addEventListener(eventName, startMusic, { once:true });
+});
 
 function openInvite(){
   if (inviteOpened) return;
@@ -444,8 +457,7 @@ function openInvite(){
   document.getElementById('hero-video').play().catch(()=>{});
   envelope.classList.add('opened');
   document.documentElement.classList.remove('no-scroll');
-  const audio = document.getElementById('bg-audio');
-  if (audio.src) audio.play().catch(()=>{});
+  startMusic();
 }
 
 const startFallback = setTimeout(openInvite, 8000);
@@ -455,11 +467,10 @@ envelopeVideo.addEventListener('ended', openInvite);
 envelopeVideo.addEventListener('error', openInvite);
 
 /* Background music toggle */
-const musicBtn = document.getElementById('music-toggle');
 const audioEl = document.getElementById('bg-audio');
 musicBtn.addEventListener('click', () => {
   if (!audioEl.src) return;
-  if (audioEl.paused) { audioEl.play(); musicBtn.textContent = '♫'; }
+  if (audioEl.paused) startMusic();
   else { audioEl.pause(); musicBtn.textContent = '♪'; }
 });
 
