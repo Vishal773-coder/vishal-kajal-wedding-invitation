@@ -157,6 +157,18 @@
   .tl-item .when{font-size:15px;color:var(--ink);margin:4px 0}
   .tl-item .note{font-size:15px;color:var(--ink-soft)}
 
+  /* Single featured event */
+  .event-feature{max-width:380px;margin:26px auto 0}
+  .event-feature .ef-title{font-size:clamp(44px,12vw,58px);line-height:1.1;color:var(--maroon);display:block}
+  .event-feature .ef-rule{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto;color:var(--gold)}
+  .event-feature .ef-rule::before,.event-feature .ef-rule::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .event-feature .ef-rule::after{background:linear-gradient(270deg,transparent,var(--gold))}
+  .event-feature .ef-day{font-size:15px;letter-spacing:5px;text-transform:uppercase;color:var(--ink-soft)}
+  .event-feature .ef-date{font-family:'Playfair Display',serif;font-size:clamp(30px,8vw,38px);color:var(--rose-dark);margin:8px 0 18px;line-height:1.15}
+  .event-feature .ef-time{display:inline-block;padding:9px 28px;border:1px solid var(--gold);border-radius:30px;
+    font-size:19px;font-weight:600;letter-spacing:2px;color:var(--maroon);background:rgba(255,255,255,.55)}
+  .event-feature .ef-note{margin-top:22px;font-size:17px;font-style:italic;color:var(--ink-soft)}
+
   /* ---------- Venue ---------- */
   #venue{background:var(--cream)}
   .venue-pin{width:30px;height:30px;color:var(--rose-dark);margin-bottom:4px}
@@ -293,12 +305,13 @@
 <section id="events">
   <div class="eyebrow">Please join us</div>
   <h2 class="script" style="font-size:38px">Wedding Events</h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <h3>Wedding Ceremony</h3>
-      <div class="when">Dec 2, 2026, 8:00 PM</div>
-      <div class="note">Your gracious presence is requested &#10084;</div>
-    </div>
+  <div class="event-feature">
+    <h3 class="script ef-title">Wedding Ceremony</h3>
+    <div class="ef-rule">&#10048;</div>
+    <div class="ef-day">Wednesday</div>
+    <div class="ef-date">2 December 2026</div>
+    <div class="ef-time">8:00 PM</div>
+    <div class="ef-note">Your gracious presence is requested &#10084;</div>
   </div>
 </section>
 
