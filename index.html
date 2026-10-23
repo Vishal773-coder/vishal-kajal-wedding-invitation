@@ -512,7 +512,7 @@ audio.addEventListener('pause', () => { musicBtn.textContent = '♪'; });
    enough "media engagement"; otherwise retry on the first gesture of any kind
    (tap, click, key, touch release) and stop once the music is actually playing. */
 startMusic();
-const unlockEvents = ['pointerdown', 'pointerup', 'touchend', 'click', 'keydown'];
+const unlockEvents = ['pointerdown', 'pointerup', 'touchstart', 'touchend', 'click', 'keydown', 'wheel', 'touchmove', 'scroll'];
 function unlockMusic(){
   startMusic();
   if (!audio.paused) unlockEvents.forEach(n => document.removeEventListener(n, unlockMusic));
